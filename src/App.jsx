@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import Player from './Player'
+import Player2 from './Player2';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,8 +16,18 @@ export default function App() {
   return (
     <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>
+          {({ isActive }) => (
+
+          <Player isActive={isActive} />
+          )}
+        </SwiperSlide>
+        <SwiperSlide>
+        {({ isActive }) => (
+
+<Player2 isActive={isActive} />
+)}
+        </SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
         <SwiperSlide>Slide 5</SwiperSlide>
